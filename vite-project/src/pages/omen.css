@@ -1,0 +1,154 @@
+/* 🌿 Base Styles */
+.omen-container {
+  padding: 2rem 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFF7E0;
+  color: #1E293B;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔄 Mode Switch Buttons */
+.mode-switch {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-switch button {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #E2E8F0;
+  color: #1E293B;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-switch button.active {
+  background: #fb8a00;
+  color: white;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
+.mode-switch button:hover {
+  background: #CBD5E1;
+}
+
+/* 🧾 Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-section label {
+  font-weight: 500;
+  color: #1E293B;
+}
+
+.input-section input[type="text"],
+.input-section input[type="file"] {
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+  padding: 0.5rem 0.8rem;
+  color: #1E293B;
+  font-size: 0.95rem;
+}
+
+/* 🔮 Predict / Omens Button */
+.predict-btn {
+  background-color: #ff8e03;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.predict-btn:hover {
+  background-color: #ff8e03;
+  transform: translateY(-1px);
+}
+
+/* 🧮 Forecast Summary Cards */
+.forecast-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.forecast-card {
+  background-color: #FEF9C3;
+  border-radius: 15px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-4px);
+}
+
+.forecast-card h3 {
+  font-size: 1rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+/* ✨ Special Omens Response */
+.omens-response {
+  background-color: #F0FDF4;
+  border-left: 6px solid #10B981;
+  text-align: left;
+  white-space: pre-wrap;
+}
+.input-section textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1E293B;
+  resize: none;
+  outline: none;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.input-section textarea:focus {
+  border-color: #fb8a00;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(251, 138, 0, 0.2);
+}
+
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+  .input-section {
+    flex-direction: column;
+  }
+
+  .predict-btn {
+    width: 100%;
+  }
+}

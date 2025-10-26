@@ -1,0 +1,264 @@
+/* 🌿 Base Styles */
+body {
+  background-color: #FFF7E0; /* soft sand/papyrus */
+  color: #1E293B; /* deep gray text */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* 🧭 Page Layout */
+.home-container {
+  padding: 2rem 2.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔄 Mode Switch Buttons */
+.mode-switch {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-switch button {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #E2E8F0;
+  color: #1E293B;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-switch button.active {
+  background: #fb8a00;
+  color: white;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
+.mode-switch button:hover {
+  background: #CBD5E1;
+}
+
+/* 🧾 Input Section */
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-section label {
+  font-weight: 500;
+  color: #1E293B;
+}
+
+.input-section input[type="text"],
+.input-section input[type="file"] {
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+  padding: 0.5rem 0.8rem;
+  color: #1E293B;
+  font-size: 0.95rem;
+}
+
+.predict-btn {
+  background-color: #ff8e03;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.predict-btn:hover {
+  background-color: #ff8e03;
+  transform: translateY(-1px);
+}
+
+/* 🧮 Forecast Summary Cards */
+.forecast-summary {
+    /* 👇 CHANGE 1: Adjusted minmax to make the cards smaller and consistently display three per row on larger screens */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Force three columns on wide screens */
+    gap: 1rem; /* Slightly reduced gap */
+    margin-bottom: 2rem;
+}
+
+.forecast-card {
+    background-color: #FEF9C3;
+    border-radius: 15px;
+    padding: 1rem; /* 👇 CHANGE 2: Slightly reduced padding to make the box smaller */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-4px);
+}
+
+.forecast-card h3 {
+    font-size: 0.9rem; /* 👇 CHANGE 3: Slightly smaller title font */
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-card p {
+    font-size: 1rem; /* 👇 CHANGE 4: Slightly smaller value font */
+    font-weight: 600;
+    color: #1E293B;
+}
+/* 🔮 Status Variants */
+.forecast-card.balance {
+  background-color: #F0FDF4;
+  border-left: 6px solid #10B981;
+}
+
+.forecast-card.flood {
+  background-color: #FEF2F2;
+  border-left: 6px solid #DC2626;
+}
+
+.forecast-card.famine {
+  background-color: #FFFBEB;
+  border-left: 6px solid #F59E0B;
+}
+
+/* 📊 Chart Container */
+.chart-container {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container h2 {
+  font-size: 1.3rem;
+  color: #1E293B;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* 🧭 Chart Axis and Labels */
+.recharts-cartesian-axis-tick-value {
+  fill: #334155 !important;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* ✨ Utility */
+.text-muted {
+  color: #6B7280;
+}
+
+.text-highlight {
+  color: #D97706;
+  font-weight: 600;
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+  .input-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .predict-btn {
+    width: 100%;
+  }
+
+  .forecast-summary {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Keep flex-wrap for overall section */
+}
+
+/* New: Standardize the container for the label/input pair */
+.input-section > label {
+    font-weight: 500;
+    color: #1E293B;
+    /* Remove this to allow the input to take the needed space, 
+       but we'll adjust the subsequent input/file element.
+    */
+    /* We can also make this a block element for better flow on wrap */
+    display: block;
+    min-width: 120px; /* Gives a minimum space for the label */
+}
+
+.input-section input[type="text"],
+.input-section input[type="file"] {
+    /* Existing styles */
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    background-color: #F8FAFC;
+    padding: 0.5rem 0.8rem;
+    color: #1E293B;
+    font-size: 0.95rem;
+
+    /* 👇 Fix 1: Explicitly tell the inputs to take available space */
+    flex-grow: 1; 
+    min-width: 180px; /* Ensure they have a minimum sensible width */
+}
+
+.predict-btn {
+    /* Existing styles */
+    background-color: #ff8e03;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+    /* 👇 Fix 2: Prevent the button from growing/shrinking and ensure consistent ordering */
+    flex-shrink: 0; 
+    order: 3; /* Push the button to the end of the flex container */
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+  .input-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 👇 Fix 3: On mobile, make label and input take full width for better stacking */
+  .input-section > label {
+    width: 100%;
+    margin-top: 0.5rem; /* Add a little space between elements */
+    min-width: unset;
+  }
+  
+  .input-section input[type="text"],
+  .input-section input[type="file"] {
+      width: 100%;
+      box-sizing: border-box; /* Include padding/border in the width calculation */
+      min-width: unset;
+  }
+
+  .predict-btn {
+    width: 100%;
+    margin-top: 1rem; /* Add space above the button */
+    order: unset; /* Reset order on mobile */
+  }
+}

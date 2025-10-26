@@ -1,0 +1,22 @@
+.records-page {
+  padding: 2rem;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.chart-card h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: black;
+}
